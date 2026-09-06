@@ -1,17 +1,23 @@
 :root {
-    --bg: #A9A9A9;
-    --surface: #B3B3B3;
-    --text: #FFFFFF;
-    --muted: #696969;
-    --accent: #808000;
-    --highlight: #FFFF00;
-    --border: #808080;
+    --bg: #252B35;
+    --surface: #303743;
 
-    --max-width: 1100px;
+    --cream: #F4EFE4;
+    --cream-soft: #D8D2C6;
+
+    --text: #F4EFE4;
+    --muted: #B5B8BC;
+
+    --accent: #AEB7C5;
+    --border: #48505C;
+
+    --max-width: 1080px;
 }
 
 
-/* RESET */
+/* =========================
+   RESET
+========================= */
 
 * {
     margin: 0;
@@ -45,7 +51,9 @@ a {
 }
 
 
-/* NAVIGATION */
+/* =========================
+   NAVIGATION
+========================= */
 
 .navbar {
     width: min(100% - 40px, var(--max-width));
@@ -70,88 +78,123 @@ a {
 }
 
 .navbar nav a {
-    color: var(--text);
-    opacity: 0.75;
+    color: var(--cream-soft);
 
     font-size: 14px;
     font-weight: 500;
 
-    transition: opacity 0.2s ease;
+    transition: color 0.2s ease;
 }
 
 .navbar nav a:hover {
-    opacity: 1;
+    color: var(--cream);
 }
 
 
-/* HERO */
+/* =========================
+   PROFILE IMAGE
+========================= */
+
+.profile {
+    width: min(100% - 40px, var(--max-width));
+    margin: 20px auto 0;
+}
+
+.profile-image-wrap {
+    width: 100%;
+    height: 430px;
+
+    overflow: hidden;
+
+    border-radius: 28px 28px 90px 28px;
+
+    background: var(--surface);
+}
+
+.profile-image {
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    object-fit: cover;
+    object-position: center;
+}
+
+
+/* =========================
+   HERO
+========================= */
 
 .hero {
     width: min(100% - 40px, var(--max-width));
-    min-height: 650px;
     margin: 0 auto;
+
+    min-height: 570px;
 
     display: flex;
     flex-direction: column;
     justify-content: center;
 
-    padding: 80px 0;
+    padding: 85px 0;
 }
 
 .eyebrow {
-    color: var(--highlight);
+    color: var(--cream-soft);
 
     font-size: 12px;
     font-weight: 700;
-    letter-spacing: 0.15em;
+
+    letter-spacing: 0.14em;
 
     margin-bottom: 22px;
 }
 
-
-/* NAME */
-
 .hero h1 {
     max-width: 700px;
 
-    font-size: clamp(54px, 8vw, 92px);
-    line-height: 0.95;
+    font-size: clamp(54px, 7vw, 78px);
+
+    line-height: 0.98;
 
     letter-spacing: -0.055em;
-    font-weight: 700;
+
+    font-weight: 650;
+
+    margin-bottom: 30px;
+}
+
+.intro {
+    max-width: 600px;
+
+    color: var(--cream-soft);
+
+    font-size: 18px;
+    line-height: 1.8;
 
     margin-bottom: 34px;
 }
 
-.intro {
-    max-width: 620px;
 
-    color: var(--text);
-
-    font-size: 19px;
-    line-height: 1.8;
-
-    opacity: 0.9;
-
-    margin-bottom: 36px;
-}
-
-
-/* BUTTONS */
+/* =========================
+   BUTTONS
+========================= */
 
 .hero-actions {
     display: flex;
     gap: 12px;
+
     flex-wrap: wrap;
 }
 
 .button {
+    min-height: 48px;
+
+    padding: 0 22px;
+
     display: inline-flex;
     align-items: center;
     justify-content: center;
-
-    min-height: 48px;
-    padding: 0 23px;
 
     border: 1px solid var(--border);
 
@@ -159,9 +202,10 @@ a {
     font-weight: 600;
 
     transition:
-        transform 0.2s ease,
         background 0.2s ease,
-        color 0.2s ease;
+        color 0.2s ease,
+        border-color 0.2s ease,
+        transform 0.2s ease;
 }
 
 .button:hover {
@@ -169,105 +213,103 @@ a {
 }
 
 .button.primary {
-    background: var(--accent);
-    color: var(--text);
+    background: var(--cream);
+    color: var(--bg);
 
-    border-color: var(--accent);
+    border-color: var(--cream);
 }
 
 .button.primary:hover {
-    background: var(--highlight);
-    color: #000000;
-
-    border-color: var(--highlight);
+    background: var(--cream-soft);
+    border-color: var(--cream-soft);
 }
 
 .button.secondary {
     background: transparent;
-    color: var(--text);
+    color: var(--cream);
 }
 
 .button.secondary:hover {
-    border-color: var(--highlight);
-    color: var(--highlight);
+    border-color: var(--cream);
 }
 
 
-/* GENERAL SECTIONS */
+/* =========================
+   GENERAL SECTIONS
+========================= */
 
 .section {
     width: min(100% - 40px, var(--max-width));
     margin: 0 auto;
 
     display: grid;
-    grid-template-columns: 190px 1fr;
-    gap: 70px;
 
-    padding: 110px 0;
+    grid-template-columns: 170px 1fr;
+
+    gap: 65px;
+
+    padding: 105px 0;
 
     border-top: 1px solid var(--border);
 }
 
 .section-label {
-    color: var(--text);
+    color: var(--cream-soft);
 
     font-size: 12px;
     font-weight: 700;
-    letter-spacing: 0.13em;
 
-    opacity: 0.85;
+    letter-spacing: 0.12em;
 }
 
 .section-label span {
-    color: var(--highlight);
+    color: var(--accent);
+
     margin-right: 10px;
 }
 
 .section-content {
-    max-width: 760px;
+    max-width: 750px;
 }
 
 .section-content h2 {
-    font-size: clamp(34px, 5vw, 52px);
+    font-size: clamp(34px, 4.5vw, 50px);
+
     line-height: 1.08;
 
-    letter-spacing: -0.04em;
-    font-weight: 700;
+    letter-spacing: -0.045em;
 
-    margin-bottom: 32px;
+    font-weight: 650;
+
+    margin-bottom: 30px;
 }
 
 .section-content > p {
-    color: var(--text);
+    color: var(--cream-soft);
 
-    font-size: 18px;
+    font-size: 17px;
+
     line-height: 1.9;
 
-    opacity: 0.88;
-
-    margin-bottom: 24px;
+    margin-bottom: 22px;
 }
 
 
-/* EXPERIENCE */
+/* =========================
+   EXPERIENCE
+========================= */
 
 .experience-item {
-    padding: 0 0 50px;
-    margin-bottom: 50px;
+    padding-bottom: 48px;
+
+    margin-bottom: 48px;
 
     border-bottom: 1px solid var(--border);
 }
 
-.experience-item:last-child {
-    border-bottom: none;
-    margin-bottom: 0;
-}
-
-
-/* EXPERIENCE HEADER */
-
-.experience-item > div:first-child {
+.experience-header {
     display: flex;
+
     align-items: flex-start;
     justify-content: space-between;
 
@@ -277,74 +319,116 @@ a {
 }
 
 .experience-item h3 {
-    font-size: 22px;
+    font-size: 21px;
+
     line-height: 1.35;
 
     letter-spacing: -0.02em;
-    font-weight: 700;
+
+    font-weight: 650;
 }
 
 .company {
-    color: var(--highlight);
+    color: var(--accent);
 
     font-size: 14px;
     font-weight: 600;
 
-    margin-top: 7px;
+    margin-top: 6px;
 }
 
 .date {
-    color: var(--text);
+    color: var(--muted);
 
     font-size: 13px;
 
     white-space: nowrap;
-    opacity: 0.7;
 }
 
-
-/* EXPERIENCE DESCRIPTION */
-
-.experience-item > p {
+.experience-description {
     max-width: 680px;
 
-    color: var(--text);
+    color: var(--cream-soft);
 
-    font-size: 17px;
+    font-size: 16px;
+
     line-height: 1.85;
-
-    opacity: 0.82;
-
-    margin-top: 8px;
 }
 
 
-/* SKILLS */
+/* =========================
+   SELECTED ECOSYSTEMS
+========================= */
+
+.ecosystems {
+    margin-top: 15px;
+}
+
+.ecosystems-label {
+    color: var(--muted) !important;
+
+    font-size: 11px !important;
+
+    font-weight: 700;
+
+    letter-spacing: 0.13em;
+
+    margin-bottom: 18px !important;
+}
+
+.ecosystem-list {
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 10px;
+}
+
+.ecosystem-list span {
+    padding: 9px 14px;
+
+    border: 1px solid var(--border);
+
+    border-radius: 999px;
+
+    color: var(--cream-soft);
+
+    font-size: 13px;
+}
+
+
+/* =========================
+   SKILLS
+========================= */
 
 .skills-grid {
     display: grid;
+
     grid-template-columns: repeat(2, 1fr);
 
     border-top: 1px solid var(--border);
 }
 
 .skills-grid span {
-    padding: 21px 0;
+    padding: 20px 0;
 
     border-bottom: 1px solid var(--border);
 
+    color: var(--cream-soft);
+
     font-size: 16px;
-    font-weight: 500;
 }
 
 
-/* CONTACT */
+/* =========================
+   CONTACT
+========================= */
 
 .contact {
     width: min(100% - 40px, var(--max-width));
     margin: 0 auto;
 
-    padding: 130px 0;
+    padding: 125px 0;
 
     border-top: 1px solid var(--border);
 }
@@ -352,48 +436,56 @@ a {
 .contact h2 {
     max-width: 650px;
 
-    font-size: clamp(52px, 7vw, 82px);
-    line-height: 0.95;
+    font-size: clamp(46px, 6vw, 66px);
 
-    letter-spacing: -0.055em;
-    font-weight: 700;
+    line-height: 0.98;
 
-    margin-bottom: 32px;
+    letter-spacing: -0.05em;
+
+    font-weight: 650;
+
+    margin-bottom: 30px;
 }
 
-.contact > p:not(.eyebrow) {
-    max-width: 560px;
+.contact-intro {
+    max-width: 540px;
 
-    color: var(--text);
+    color: var(--cream-soft);
 
-    font-size: 18px;
+    font-size: 17px;
+
     line-height: 1.8;
 
-    opacity: 0.85;
-
-    margin-bottom: 48px;
+    margin-bottom: 45px;
 }
 
 
-/* CONTACT LINKS */
+/* =========================
+   CONTACT LINKS
+========================= */
 
 .contact-links {
-    display: flex;
-    flex-direction: column;
-
     max-width: 720px;
+
+    display: flex;
+
+    flex-direction: column;
 }
 
 .contact-links a {
     display: flex;
+
     align-items: center;
     justify-content: space-between;
 
-    padding: 24px 0;
+    padding: 22px 0;
 
     border-bottom: 1px solid var(--border);
 
-    font-size: 17px;
+    color: var(--cream);
+
+    font-size: 16px;
+
     font-weight: 600;
 
     transition:
@@ -402,17 +494,21 @@ a {
 }
 
 .contact-links a:hover {
-    color: var(--highlight);
-    padding-left: 8px;
+    color: var(--cream-soft);
+
+    padding-left: 7px;
 }
 
 .contact-links a span:last-child {
-    font-size: 20px;
+    font-size: 19px;
+
     font-weight: 400;
 }
 
 
-/* FOOTER */
+/* =========================
+   FOOTER
+========================= */
 
 footer {
     width: min(100% - 40px, var(--max-width));
@@ -421,24 +517,27 @@ footer {
     padding: 30px 0 45px;
 
     display: flex;
+
+    align-items: center;
     justify-content: space-between;
 
-    color: var(--text);
+    color: var(--muted);
 
     font-size: 13px;
-
-    opacity: 0.7;
 
     border-top: 1px solid var(--border);
 }
 
 
-/* MOBILE */
+/* =========================
+   MOBILE
+========================= */
 
 @media (max-width: 700px) {
 
     .navbar {
         width: min(100% - 32px, var(--max-width));
+
         padding: 22px 0;
     }
 
@@ -447,31 +546,52 @@ footer {
     }
 
 
+    /* PROFILE */
+
+    .profile {
+        width: min(100% - 32px, var(--max-width));
+
+        margin-top: 12px;
+    }
+
+    .profile-image-wrap {
+        height: 310px;
+
+        border-radius: 22px 22px 70px 22px;
+    }
+
+
+    /* HERO */
+
     .hero {
         width: min(100% - 32px, var(--max-width));
-        min-height: 600px;
+
+        min-height: 520px;
 
         padding: 65px 0;
     }
 
     .hero h1 {
-        font-size: clamp(52px, 15vw, 78px);
+        font-size: 52px;
 
-        margin-bottom: 28px;
+        margin-bottom: 26px;
     }
 
     .intro {
-        font-size: 17px;
+        font-size: 16px;
+
         line-height: 1.8;
     }
 
+
+    /* SECTIONS */
 
     .section {
         width: min(100% - 32px, var(--max-width));
 
         display: block;
 
-        padding: 80px 0;
+        padding: 78px 0;
     }
 
     .section-label {
@@ -479,20 +599,22 @@ footer {
     }
 
     .section-content h2 {
-        font-size: 38px;
+        font-size: 36px;
     }
 
     .section-content > p {
-        font-size: 17px;
+        font-size: 16px;
+
+        line-height: 1.85;
     }
 
 
-    /* EXPERIENCE MOBILE */
+    /* EXPERIENCE */
 
-    .experience-item > div:first-child {
+    .experience-header {
         display: block;
 
-        margin-bottom: 18px;
+        margin-bottom: 17px;
     }
 
     .experience-item h3 {
@@ -505,9 +627,23 @@ footer {
         margin-top: 8px;
     }
 
-    .experience-item > p {
+    .experience-description {
         font-size: 16px;
+
         line-height: 1.8;
+    }
+
+
+    /* ECOSYSTEMS */
+
+    .ecosystem-list {
+        gap: 8px;
+    }
+
+    .ecosystem-list span {
+        font-size: 12px;
+
+        padding: 8px 12px;
     }
 
 
@@ -517,25 +653,21 @@ footer {
         grid-template-columns: 1fr;
     }
 
-    .skills-grid span {
-        font-size: 16px;
-    }
-
 
     /* CONTACT */
 
     .contact {
         width: min(100% - 32px, var(--max-width));
 
-        padding: 100px 0;
+        padding: 95px 0;
     }
 
     .contact h2 {
-        font-size: 58px;
+        font-size: 46px;
     }
 
-    .contact > p:not(.eyebrow) {
-        font-size: 17px;
+    .contact-intro {
+        font-size: 16px;
     }
 
 
@@ -545,6 +677,9 @@ footer {
         width: min(100% - 32px, var(--max-width));
 
         flex-direction: column;
+
+        align-items: flex-start;
+
         gap: 8px;
     }
 }
