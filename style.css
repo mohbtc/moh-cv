@@ -1,0 +1,457 @@
+ /* ========================================
+   MOH CV — MAIN STYLES
+   ======================================== */
+
+:root {
+    --bg: #f8fafc;
+    --surface: #ffffff;
+    --text: #0f172a;
+    --muted: #64748b;
+    --accent: #2563eb;
+    --border: #e2e8f0;
+
+    --max-width: 1100px;
+}
+
+
+/* ========================================
+   RESET
+   ======================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI",
+        Roboto, Helvetica, Arial, sans-serif;
+    line-height: 1.6;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+
+/* ========================================
+   NAVIGATION
+   ======================================== */
+
+.navbar {
+    width: min(100% - 40px, var(--max-width));
+    margin: 0 auto;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 28px 0;
+}
+
+.logo {
+    font-size: 20px;
+    font-weight: 800;
+    letter-spacing: -0.05em;
+}
+
+.navbar nav {
+    display: flex;
+    gap: 28px;
+}
+
+.navbar nav a {
+    color: var(--muted);
+    font-size: 14px;
+    font-weight: 500;
+
+    transition: color 0.2s ease;
+}
+
+.navbar nav a:hover {
+    color: var(--text);
+}
+
+
+/* ========================================
+   HERO
+   ======================================== */
+
+.hero {
+    width: min(100% - 40px, var(--max-width));
+    min-height: 720px;
+    margin: 0 auto;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    padding: 80px 0;
+}
+
+.eyebrow {
+    color: var(--accent);
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    margin-bottom: 24px;
+}
+
+.hero h1 {
+    max-width: 850px;
+
+    font-size: clamp(64px, 11vw, 132px);
+    line-height: 0.9;
+    letter-spacing: -0.07em;
+    font-weight: 800;
+
+    margin-bottom: 40px;
+}
+
+.intro {
+    max-width: 580px;
+
+    color: var(--muted);
+    font-size: 19px;
+    line-height: 1.7;
+
+    margin-bottom: 36px;
+}
+
+
+/* ========================================
+   BUTTONS
+   ======================================== */
+
+.hero-actions {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    min-height: 48px;
+    padding: 0 22px;
+
+    border: 1px solid var(--border);
+
+    font-size: 14px;
+    font-weight: 600;
+
+    transition:
+        transform 0.2s ease,
+        background 0.2s ease,
+        color 0.2s ease;
+}
+
+.button:hover {
+    transform: translateY(-2px);
+}
+
+.button.primary {
+    background: var(--text);
+    color: white;
+    border-color: var(--text);
+}
+
+.button.primary:hover {
+    background: var(--accent);
+    border-color: var(--accent);
+}
+
+.button.secondary {
+    background: var(--surface);
+}
+
+
+/* ========================================
+   SECTIONS
+   ======================================== */
+
+.section {
+    width: min(100% - 40px, var(--max-width));
+    margin: 0 auto;
+
+    display: grid;
+    grid-template-columns: 180px 1fr;
+    gap: 60px;
+
+    padding: 120px 0;
+
+    border-top: 1px solid var(--border);
+}
+
+.section-label {
+    color: var(--muted);
+
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+}
+
+.section-label span {
+    color: var(--accent);
+    margin-right: 10px;
+}
+
+.section-content {
+    max-width: 720px;
+}
+
+.section-content h2 {
+    font-size: clamp(34px, 5vw, 56px);
+    line-height: 1.05;
+    letter-spacing: -0.045em;
+
+    margin-bottom: 30px;
+}
+
+.section-content > p {
+    color: var(--muted);
+    font-size: 17px;
+    line-height: 1.8;
+
+    margin-bottom: 20px;
+}
+
+
+/* ========================================
+   EXPERIENCE
+   ======================================== */
+
+.experience-item {
+    padding: 0 0 45px;
+    margin-bottom: 45px;
+
+    border-bottom: 1px solid var(--border);
+}
+
+.experience-item:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+}
+
+.experience-item > div:first-child {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+    margin-bottom: 14px;
+}
+
+.experience-item h3 {
+    font-size: 21px;
+    letter-spacing: -0.02em;
+}
+
+.company {
+    color: var(--accent);
+    font-size: 14px;
+    margin-top: 4px;
+}
+
+.date {
+    color: var(--muted);
+    font-size: 13px;
+    white-space: nowrap;
+}
+
+.experience-item > p {
+    max-width: 650px;
+
+    color: var(--muted);
+    font-size: 15px;
+    line-height: 1.8;
+}
+
+
+/* ========================================
+   SKILLS
+   ======================================== */
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0;
+
+    border-top: 1px solid var(--border);
+}
+
+.skills-grid span {
+    padding: 20px 0;
+
+    border-bottom: 1px solid var(--border);
+
+    font-size: 15px;
+}
+
+
+/* ========================================
+   CONTACT
+   ======================================== */
+
+.contact {
+    width: min(100% - 40px, var(--max-width));
+
+    margin: 0 auto;
+    padding: 150px 0;
+
+    border-top: 1px solid var(--border);
+}
+
+.contact h2 {
+    max-width: 700px;
+
+    font-size: clamp(56px, 9vw, 110px);
+    line-height: 0.9;
+    letter-spacing: -0.065em;
+
+    margin-bottom: 35px;
+}
+
+.contact > p:not(.eyebrow) {
+    max-width: 500px;
+
+    color: var(--muted);
+    font-size: 17px;
+
+    margin-bottom: 45px;
+}
+
+.contact-links {
+    display: flex;
+    flex-direction: column;
+
+    max-width: 700px;
+}
+
+.contact-links a {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 20px 0;
+
+    border-bottom: 1px solid var(--border);
+
+    font-size: 17px;
+    font-weight: 600;
+
+    transition: color 0.2s ease;
+}
+
+.contact-links a:hover {
+    color: var(--accent);
+}
+
+.contact-links span {
+    font-size: 20px;
+}
+
+
+/* ========================================
+   FOOTER
+   ======================================== */
+
+footer {
+    width: min(100% - 40px, var(--max-width));
+    margin: 0 auto;
+
+    padding: 30px 0 45px;
+
+    display: flex;
+    justify-content: space-between;
+
+    color: var(--muted);
+    font-size: 13px;
+
+    border-top: 1px solid var(--border);
+}
+
+
+/* ========================================
+   MOBILE
+   ======================================== */
+
+@media (max-width: 700px) {
+
+    .navbar {
+        width: min(100% - 32px, var(--max-width));
+        padding: 22px 0;
+    }
+
+    .navbar nav {
+        display: none;
+    }
+
+    .hero {
+        width: min(100% - 32px, var(--max-width));
+        min-height: 650px;
+        padding: 70px 0;
+    }
+
+    .hero h1 {
+        font-size: clamp(60px, 18vw, 90px);
+        margin-bottom: 30px;
+    }
+
+    .intro {
+        font-size: 16px;
+    }
+
+    .section {
+        width: min(100% - 32px, var(--max-width));
+
+        display: block;
+
+        padding: 80px 0;
+    }
+
+    .section-label {
+        margin-bottom: 35px;
+    }
+
+    .section-content h2 {
+        font-size: 38px;
+    }
+
+    .experience-item > div:first-child {
+        display: block;
+    }
+
+    .date {
+        display: block;
+        margin-top: 8px;
+    }
+
+    .skills-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .contact {
+        width: min(100% - 32px, var(--max-width));
+        padding: 100px 0;
+    }
+
+    .contact h2 {
+        font-size: 64px;
+    }
+
+    footer {
+        width: min(100% - 32px, var(--max-width));
+
+        flex-direction: column;
+        gap: 8px;
+    }
+}
