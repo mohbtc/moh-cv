@@ -407,13 +407,9 @@ a {
 
 .projects-label {
     color: var(--muted);
-
-    font-size: 11px;
-
+    font-size: 13px;
     font-weight: 700;
-
     letter-spacing: 0.13em;
-
     margin-bottom: 18px;
 }
 
