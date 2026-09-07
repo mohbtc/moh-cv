@@ -398,6 +398,25 @@ a {
 
 
 /* =========================
+   PROJECT WORK
+========================= */
+
+.projects {
+    text-align: center;
+}
+
+.project-list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.project {
+    text-align: center;
+}
+
+
+/* =========================
    SKILLS
 ========================= */
 
